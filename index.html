@@ -7,10 +7,22 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Canvas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+        let ctx = canvas.getContext("2d");
+        canvas.onmousemove = (e) => {
+            console.log(e.clientY)
+            ctx.beginPath();
+            ctx.arc(e.clientX, e.clientY, 10, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.fill();
+        }
 
+    </script>
 </body>
 
 </html>
